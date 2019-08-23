@@ -11,6 +11,7 @@
  * @link http://www.workerman.net/
  * @license http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 use \Workerman\Worker;
 use \Workerman\WebServer;
 use \GatewayWorker\Gateway;
@@ -18,10 +19,10 @@ use \GatewayWorker\BusinessWorker;
 use \Workerman\Autoloader;
 
 // 自动加载类
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 // gateway 进程，这里使用Text协议，可以用telnet测试
-$gateway = new Gateway("websocket://0.0.0.0:8282");
+$gateway = new Gateway("websocket://0.0.0.0:60001");
 // gateway名称，status方便查看
 $gateway->name = 'YourAppGateway';
 // gateway进程数（设置不合理会报错）
@@ -39,7 +40,6 @@ $gateway->registerAddress = '127.0.0.1:1238';
 
 // 心跳间隔
 $gateway->pingInterval = 30;
-
 $gateway->pingNotResponseLimit = 1;
 
 // 心跳数据
@@ -60,7 +60,7 @@ $gateway->onConnect = function($connection)
         // onWebSocketConnect 里面$_GET $_SERVER是可用的
         // var_dump($_GET, $_SERVER);
     };
-}; 
+};
 */
 
 // 如果不是在根目录启动，则运行runAll方法

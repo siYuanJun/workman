@@ -75,7 +75,7 @@
             setTimeout(function () {
                 //监听自定义工具栏点击，以添加代码为例
                 //建立websocket连接
-                socket = new WebSocket('ws://192.168.10.10:8282');
+                socket = new WebSocket('ws://' + document.domain + ':60001');
                 socket.onopen = function(){
                     console.log("websocket is connected");
                     ping = setInterval(function () {

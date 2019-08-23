@@ -1,9 +1,11 @@
 <?php
-namespace Config;
 /**
  * mysql配置
  * @author walkor
  */
+
+namespace App\Workerman\Config;
+
 class Db
 {
     /**
@@ -14,11 +16,11 @@ class Db
      * @var array
      */
     public static $homestead = array(
-        'host' => '192.168.10.10',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'dbname' => 'im',
-        'user' => 'homestead',
-        'password' => 'secret',
-        'charset'  => 'utf8',
+        'dbname' => 'lara_im',
+        'user' => 'root',
+        'password' => 'r6phifROprLT5OCh!7aH',
+        'charset' => 'utf8',
     );
 }
